@@ -99,10 +99,11 @@
 		CA14E14C2ACACF100021A869 /* BMI-Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				CA14E17F2ACAD3240021A869 /* Models */,
+				CA14E17E2ACAD31C0021A869 /* Views */,
+				CA14E17D2ACAD2FD0021A869 /* Controllers */,
 				CA14E14D2ACACF100021A869 /* AppDelegate.swift */,
 				CA14E14F2ACACF100021A869 /* SceneDelegate.swift */,
-				CA14E1512ACACF100021A869 /* ViewController.swift */,
-				CA14E1532ACACF100021A869 /* Main.storyboard */,
 				CA14E1562ACACF230021A869 /* Assets.xcassets */,
 				CA14E1582ACACF230021A869 /* LaunchScreen.storyboard */,
 				CA14E15B2ACACF230021A869 /* Info.plist */,
@@ -125,6 +126,29 @@
 				CA14E1702ACACF260021A869 /* BMI_CalculatorUITestsLaunchTests.swift */,
 			);
 			path = "BMI-CalculatorUITests";
+			sourceTree = "<group>";
+		};
+		CA14E17D2ACAD2FD0021A869 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA14E1512ACACF100021A869 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CA14E17E2ACAD31C0021A869 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA14E1532ACACF100021A869 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CA14E17F2ACAD3240021A869 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,6 +474,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +503,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
