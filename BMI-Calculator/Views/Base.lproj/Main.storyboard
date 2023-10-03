@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculate View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculateViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,6 +103,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0gP-pK-778"/>
+                                            <segue destination="clo-Mg-4bg" kind="presentation" identifier="gotoresult" id="aeQ-8b-UoQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -132,20 +133,20 @@
             </objects>
             <point key="canvasLocation" x="-25.190839694656489" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="Ggb-cv-ucP">
             <objects>
-                <viewController id="clo-Mg-4bg" sceneMemberID="viewController">
+                <viewController id="clo-Mg-4bg" customClass="ResultViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTr-Fm-IAw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result_background" translatesAutoresizingMaskIntoConstraints="NO" id="30y-ee-vWa">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result_background" translatesAutoresizingMaskIntoConstraints="NO" id="30y-ee-vWa">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="876"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gUn-xq-qU3">
-                                <rect key="frame" x="81.333333333333329" y="337.33333333333331" width="230.66666666666669" height="177.66666666666669"/>
+                                <rect key="frame" x="81.333333333333329" y="332.33333333333331" width="230.66666666666669" height="177.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR RESULT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BC-BX-xD7">
                                         <rect key="frame" x="0.0" y="0.0" width="230.66666666666666" height="42"/>
@@ -168,31 +169,39 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgu-Rd-a9n">
-                                <rect key="frame" x="16" y="767" width="361" height="51"/>
+                                <rect key="frame" x="16" y="791" width="361" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="VKN-tp-gli"/>
+                                    <constraint firstAttribute="height" constant="51" id="mMy-jo-gzw"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="RECALCULATE">
                                     <color key="baseForegroundColor" red="0.38587427140000002" green="0.37681865689999999" blue="0.61593395470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="clo-Mg-4bg" eventType="touchUpInside" id="thx-4o-VXY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ca1-5b-YUZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gUn-xq-qU3" firstAttribute="centerX" secondItem="eTr-Fm-IAw" secondAttribute="centerX" id="6du-Eq-t9s"/>
-                            <constraint firstItem="gUn-xq-qU3" firstAttribute="centerY" secondItem="eTr-Fm-IAw" secondAttribute="centerY" id="BkQ-F4-4HF"/>
-                            <constraint firstItem="tgu-Rd-a9n" firstAttribute="bottom" secondItem="ca1-5b-YUZ" secondAttribute="bottom" id="FGB-vV-hOz"/>
-                            <constraint firstItem="tgu-Rd-a9n" firstAttribute="leading" secondItem="ca1-5b-YUZ" secondAttribute="leading" constant="16" id="ODg-iT-Qvo"/>
-                            <constraint firstItem="30y-ee-vWa" firstAttribute="trailing" secondItem="ca1-5b-YUZ" secondAttribute="trailing" id="UF7-X0-eiN"/>
-                            <constraint firstAttribute="bottom" secondItem="30y-ee-vWa" secondAttribute="bottom" id="Xg4-8H-1zk"/>
-                            <constraint firstItem="ca1-5b-YUZ" firstAttribute="trailing" secondItem="tgu-Rd-a9n" secondAttribute="trailing" constant="16" id="Y3B-3q-3q6"/>
-                            <constraint firstItem="30y-ee-vWa" firstAttribute="leading" secondItem="ca1-5b-YUZ" secondAttribute="leading" id="yI0-4b-kQe"/>
-                            <constraint firstItem="30y-ee-vWa" firstAttribute="top" secondItem="eTr-Fm-IAw" secondAttribute="top" id="zzJ-ue-8B4"/>
+                            <constraint firstItem="tgu-Rd-a9n" firstAttribute="leading" secondItem="ca1-5b-YUZ" secondAttribute="leading" constant="16" id="7hL-jV-wxc"/>
+                            <constraint firstItem="ca1-5b-YUZ" firstAttribute="trailing" secondItem="tgu-Rd-a9n" secondAttribute="trailing" constant="16" id="Q5Q-va-jNG"/>
+                            <constraint firstItem="30y-ee-vWa" firstAttribute="trailing" secondItem="ca1-5b-YUZ" secondAttribute="trailing" id="SBy-ad-G7T"/>
+                            <constraint firstItem="30y-ee-vWa" firstAttribute="leading" secondItem="ca1-5b-YUZ" secondAttribute="leading" id="VJy-f7-Ag5"/>
+                            <constraint firstItem="gUn-xq-qU3" firstAttribute="centerX" secondItem="eTr-Fm-IAw" secondAttribute="centerX" id="a5h-Ic-BE3"/>
+                            <constraint firstItem="30y-ee-vWa" firstAttribute="top" secondItem="eTr-Fm-IAw" secondAttribute="top" id="eUb-eC-8Qp"/>
+                            <constraint firstItem="ca1-5b-YUZ" firstAttribute="bottom" secondItem="tgu-Rd-a9n" secondAttribute="bottom" id="kEm-hE-v2U"/>
+                            <constraint firstItem="30y-ee-vWa" firstAttribute="bottom" secondItem="ca1-5b-YUZ" secondAttribute="bottom" constant="34" id="s6j-kl-KiT"/>
+                            <constraint firstItem="gUn-xq-qU3" firstAttribute="centerY" secondItem="eTr-Fm-IAw" secondAttribute="centerY" id="xPl-Bq-Wqj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="COq-st-0Zb"/>
+                    <connections>
+                        <outlet property="bmiLabel" destination="HPc-WX-s4l" id="i6P-ZR-lwM"/>
+                        <outlet property="sugLabel" destination="lHg-MA-HjG" id="L22-ld-OrK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1k-1E-GG3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
