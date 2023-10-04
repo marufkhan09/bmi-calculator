@@ -10,9 +10,6 @@ import UIKit
 
 struct CalculatorBrain{
     var bmi: BMI?
-    var suggest = ""
-    
-    
     
     func getBMIValue()->String{
         if let bmiVal = bmi {
